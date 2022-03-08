@@ -202,7 +202,7 @@ function Shop() {
                 Женская одежда
               </Accordion.Header>
               <Accordion.Body style={{ padding: "0" }}>
-                <ListGroup style={{borderRadius: 0}}>>
+                <ListGroup style={{borderRadius: 0}}>
                   <ListGroup.Item
                      style={{
                       borderLeft:'none',

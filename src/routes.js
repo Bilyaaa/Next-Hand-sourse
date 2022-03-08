@@ -3,8 +3,9 @@ import Auth from "./pages/Auth";
 import Basket from "./pages/Basket";
 import Shop from "./pages/Shop";
 import Home from "./pages/Home";
-import DevicePage from './pages/DevicePage'
-import { ADMIN_ROUTE, BASKET_ROUTE, DEVICE_ROUTE, HOME_ROUTE, LOGIN_ROUTE, REGISTRATION_ROUTE, SHOP_ROUTE } from "./utils/consts";
+import DevicePage from './pages/DevicePage';
+import Delivery from './pages/Delivery'
+import { ADMIN_ROUTE, BASKET_ROUTE, DELIVERY_ROUTE, DEVICE_ROUTE, HOME_ROUTE, LOGIN_ROUTE, REGISTRATION_ROUTE, SHOP_ROUTE } from "./utils/consts";
 
 
 export const authRoutes = [
@@ -38,5 +39,9 @@ export const publicRoutes = [
     {
         path: HOME_ROUTE,
         Component: Home
+    },
+    {
+        path: DELIVERY_ROUTE,
+        Component: Delivery
     }
 ];

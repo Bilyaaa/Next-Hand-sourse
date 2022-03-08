@@ -28,6 +28,7 @@ export const SHOP_ROUTE = '/shop';
 export const BASKET_ROUTE = '/basket';
 export const DEVICE_ROUTE = '/device';
 export const HOME_ROUTE = '/';
+export const DELIVERY_ROUTE = '/delivery';
 
 
 

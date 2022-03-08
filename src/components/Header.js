@@ -1,15 +1,14 @@
-import { Navbar, Nav, NavDropdown, Container } from "react-bootstrap";
+import { Navbar, Nav, Container } from "react-bootstrap";
 import React from "react";
 import {
-  ADMIN_ROUTE,
-  LOGIN_ROUTE,
   HOME_ROUTE,
   BASKET_ROUTE,
   SHOP_ROUTE,
+  DELIVERY_ROUTE,
 } from "../utils/consts";
 
 function Header() {
-  const isAdmin = true;
+
   return (
     <Container
       style={{
@@ -36,29 +35,11 @@ function Header() {
             style={{ justifyContent: "flex-end" }}
           >
             <Nav>
-              <Nav.Link href={LOGIN_ROUTE}>Войти</Nav.Link>
-              <NavDropdown title="Меню" id="basic-nav-dropdown">
-                <NavDropdown.Item href={BASKET_ROUTE}>Корзина</NavDropdown.Item>
-                <NavDropdown.Item href={SHOP_ROUTE}>Магазин</NavDropdown.Item>
-                <NavDropdown.Item
-                  onClick={(e) => localStorage.clear()}
-                  href="#action/3.3"
-                >
-                  Очистить корзину
-                </NavDropdown.Item>
-
-                {isAdmin ? (
-                  <>
-                    {" "}
-                    <NavDropdown.Divider />
-                    <NavDropdown.Item href={ADMIN_ROUTE}>
-                      Админ панель
-                    </NavDropdown.Item>
-                  </>
-                ) : (
-                  " "
-                )}
-              </NavDropdown>
+              <Nav.Link href={SHOP_ROUTE}>Магазин</Nav.Link>
+              <Nav.Link href={BASKET_ROUTE}>Корзина</Nav.Link>
+              <Nav.Link href={DELIVERY_ROUTE}>Доставка</Nav.Link>
+              <Nav.Link href={BASKET_ROUTE}>Контакты</Nav.Link>
+              <Nav.Link href={BASKET_ROUTE}>О нас</Nav.Link>
             </Nav>
           </Navbar.Collapse>
         </Container>
