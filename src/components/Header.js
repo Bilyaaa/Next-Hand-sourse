@@ -6,6 +6,7 @@ import {
   SHOP_ROUTE,
   DELIVERY_ROUTE,
 } from "../utils/consts";
+import '../styles/Header.scss'
 
 function Header() {
 
@@ -15,13 +16,13 @@ function Header() {
         zIndex: "100",
         position: "fixed",
         margin: "0 auto",
-        padding: "0",
+        padding: " 1rem 0",
         top: "0",
         maxWidth: "100%",
         background: "white",
       }}
     >
-      <Navbar expand="lg" style={{ borderBottom: "1px solid grey" }}>
+      <Navbar expand="lg">
         <Container>
           <Navbar.Brand
             href={HOME_ROUTE}
@@ -29,17 +30,16 @@ function Header() {
           >
             NEXT HAND
           </Navbar.Brand>
-          <Navbar.Toggle aria-controls="basic-navbar-nav" />
           <Navbar.Collapse
             id="basic-navbar-nav"
             style={{ justifyContent: "flex-end" }}
           >
             <Nav>
-              <Nav.Link href={SHOP_ROUTE}>Магазин</Nav.Link>
-              <Nav.Link href={BASKET_ROUTE}>Корзина</Nav.Link>
-              <Nav.Link href={DELIVERY_ROUTE}>Доставка</Nav.Link>
-              <Nav.Link href={BASKET_ROUTE}>Контакты</Nav.Link>
-              <Nav.Link href={BASKET_ROUTE}>О нас</Nav.Link>
+              <Nav.Link className="nav-menu-a" href={SHOP_ROUTE}>Shop</Nav.Link>
+              <Nav.Link className="nav-menu-a" href={BASKET_ROUTE}>Basket</Nav.Link>
+              <Nav.Link className="nav-menu-a" href={DELIVERY_ROUTE}>Delivery</Nav.Link>
+              <Nav.Link className="nav-menu-a" href={BASKET_ROUTE}>Contacts</Nav.Link>
+              <Nav.Link className="nav-menu-a" href={BASKET_ROUTE}>About Us</Nav.Link>
             </Nav>
           </Navbar.Collapse>
         </Container>
