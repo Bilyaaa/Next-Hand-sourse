@@ -253,10 +253,13 @@ console.log(items)
       </div>
       <div style={{ width: "80%" }}>
         <Row>
-          <Col xl={6}> {items.map((item) => {
-          if (item.id ) {return <ItemLeft key={item.id} item={item}/>}
-          else {return <ItemRight key={item.id} item={item}/>}
-        })}
+          <Col xl={6}> 
+          {filteredItems.length ? 
+          filteredItems.map((item) => 
+           <ItemLeft key={item.id} item={item}/>)
+           : 
+           items.map((item) => 
+             <ItemLeft key={item.id} item={item}/>)}
             
         </Col></Row>
       </div>
