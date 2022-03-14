@@ -1,6 +1,7 @@
-import { Container, Row, Accordion, ListGroup } from "react-bootstrap";
+import { Container, Row, Col, Accordion, ListGroup } from "react-bootstrap";
 import { useEffect, useState } from "react";
-import Item from "../components/Item";
+import { ItemLeft, ItemRight } from "../components/Item";
+
 import blue1 from "../images/blue1.jpg";
 import blue2 from "../images/blue2.jpg";
 import blue3 from "../images/blue3.jpg";
@@ -71,7 +72,7 @@ function Shop() {
       setItems([
         {
           id: 1,
-          type: "Юбка",
+          type: "Skirt",
           brand: "Divided",
           price: 150,
           imgSrc: shi1,
@@ -135,7 +136,7 @@ function Shop() {
       ]);
     
   }, []);
-
+console.log(items)
   return (
     <Container style={{ display: "flex", marginTop: "6rem"  }}>
       <div style={{ width: "20%", paddingRight: "2rem" }} className={'d-none  d-xl-block' }>
@@ -252,13 +253,17 @@ function Shop() {
       </div>
       <div style={{ width: "80%" }}>
         <Row>
-          {filteredItems.length
-            ? filteredItems.map((item) => <Item key={item.id} item={item} />)
-            : items.map((item) => <Item key={item.id} item={item} />)}
-        </Row>
+          <Col xl={6}> {items.map((item) => {
+          if (item.id ) {return <ItemLeft key={item.id} item={item}/>}
+          else {return <ItemRight key={item.id} item={item}/>}
+        })}
+            
+        </Col></Row>
       </div>
     </Container>
+    
   );
+  
 }
 
 

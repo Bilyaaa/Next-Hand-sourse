@@ -1,6 +1,7 @@
 import '../styles/Home.scss'
 import { Container, Button } from "react-bootstrap";
-import city from '../images/city.jpg'
+import city from '../images/city.jpg';
+import Dog from '../images/Dog.jpg'
 import Wclothing from '../images/Wclothing.jpg'
 import { Link } from 'react-router-dom';
 import { SHOP_ROUTE } from '../utils/consts'
@@ -39,15 +40,16 @@ function HomeSec2 () {
   )
 }
 
-function HomeSec3 () {
+function HomeSec3 (props) {
+
   return (
     <Container className='home__container3'>
       <div className='home__container3__img'>
-        <img src={Wclothing}/>
+        <img src={props.src}/>
       </div>      
       <div className='home__container3__div'>
         <div className='home__container3__div-block1'>
-          WOMAN <span>CLOTHING</span>
+          {props.label} <span>CLOTHING</span>
             <div className='home__container3__div-block2'>
             <Link to={SHOP_ROUTE}>
             <Button variant='outline-light'>
@@ -67,16 +69,13 @@ function HomeSec3 () {
 
 
 function Home() {
-
-
-
-
   return (
   <>  
  <HomeSec1/>
  <HomeSec2/>
- <HomeSec3/>
+ <HomeSec3 label='WOMEN' src={Wclothing}/>
  <HomeSec2/>
+ <HomeSec3 label='KID' src={Dog}/>
  </>   
   
     
