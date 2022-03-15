@@ -26,9 +26,11 @@
     //   }
       
     .div-type {
+        text-transform: uppercase;
         width: 100%;
         align-self: flex-end;
         font-size: 2rem;
+        font-style: italic;
         text-align:center;
         background-color: white;
         width: 100%;
@@ -39,13 +41,14 @@
     div img {
         background-color: white;
         padding: 2rem 1rem 0 2rem;
-        border-radius: 0;                    
+        border-radius: 0;
         width: 400px;
-        
     }     
 }
 
 .text-container {
+    @import url('https://fonts.googleapis.com/css2?family=Murecho:wght@500&family=Noto+Serif+Display:ital@0;1&family=Yanone+Kaffeesatz:wght@500&display=swap');
+    font-family: 'Murecho', sans-serif;
     font-size: 3rem;
     background-color:#C4C4C4;
     display: flex;
@@ -95,6 +98,8 @@
 //   }
 
     .div-typeR {
+        text-transform: uppercase;
+        font-style: italic;
         width: 100%;
         align-self: flex-end;
         font-size: 2rem;
@@ -115,6 +120,9 @@
 }
 
 .text-containerR {
+    @import url('https://fonts.googleapis.com/css2?family=Murecho:wght@500&family=Noto+Serif+Display:ital@0;1&family=Yanone+Kaffeesatz:wght@500&display=swap');
+    font-family: 'Murecho', sans-serif;
+    font-weight: 700;
     padding-right: 1rem;
     margin-bottom: 2rem;
     font-size: 3rem;
