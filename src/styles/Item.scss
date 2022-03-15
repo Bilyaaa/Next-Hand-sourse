@@ -1,88 +1,106 @@
-.container {
-    .container__card {
-        padding: 2rem 0;
-        background-color: #424242;
-        border-radius: 0;
+.container__card {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    padding: 2rem 0 0 0;
+    background: url('../images/Dog.jpg');
+    border-radius: 0;
+    border: none;
+    max-height: 450px;
+    overflow: hidden;
+      
+    .div-type {
+        width: 100%;
+        align-self: flex-end;
+        font-size: 2rem;
+        text-align:center;
+        background-color: white;
+        width: 100%;
+        color: black;
+        
     }
-    .container__card__div1 {
-        max-height: 300px;
-       margin: 3rem  0;
-        display: flex;
-        background: #FFE4C4;
-        img { 
-            position: relative;
-            top: -3rem;
-            left: -20px;
-            width: 300px;
-        }
-    }
-        .container__card__div1__block {
-            left: -20px;
-            position: relative;
-            padding-right: 1rem;
-            margin-top: 4rem;
-            margin-bottom: 4rem;
-            font-size: 3rem;
-            background: #424242;
-                .container__card__div1__block-span {  
-                    font-size: 2rem;
-                    right: 0;               
-                    position: absolute;
-                    background: #C4C4C4;
-                    
-                    padding: 0 3rem;
-                    .span__text {
-                        text-transform: uppercase;
-                        padding-left: 1rem;
-                        font-size: 4rem;  
-                        color: black;
-                    }
-                }
 
-        }
+    div img {
+        background-color: white;
+        padding: 2rem 1rem 0 2rem;
+        border-radius: 0;                    
+        width: 400px;
+        
+    }     
 }
 
-.containerR {
-    .container__card {
-        padding: 2rem 0;
-        background-color: #424242;
-        border-radius: 0;
+.text-container {
+    font-size: 3rem;
+    background-color:#C4C4C4;
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 2rem;
+    padding-left: 1rem;
+    .div__brand {
+        text-transform: uppercase;
     }
-    .container__card__div1R {
-        max-height: 300px;
-       margin: 3rem  0;
-        display: flex;
-        background: #FFE4C4;
-        img { 
-            position: relative;
-            top: -3rem;
-            left: -20px;
-            width: 300px;
-        }
-    }
-        .container__card__div1__blockR {
-            left: -20px;
-            position: relative;
-            padding-right: 1rem;
-            margin-top: 4rem;
-            margin-bottom: 4rem;
-            font-size: 3rem;
-            background: #424242;
-                .container__card__div1__block-spanR {  
-                    font-size: 2rem;
-                    right: 0;               
-                    position: absolute;
-                    background: #C4C4C4;
-                    
-                    padding: 0 3rem;
-                    .span__textR {
-                        text-transform: uppercase;
-                        padding-left: 1rem;
-                        font-size: 4rem;  
-                        color: rgb(255, 0, 0);
-                    }
-                }
 
-        }
+    .div__price{
+        background-color: #424242;
+        margin: 1rem .5rem 1rem 0;
+        padding:0 2rem;
+        background-color: rgb(146, 76, 76);
+        color: black;
+        font-weight: 600;
+        box-shadow: 0 0 5px white;
+    } 
+}
+     
+
+.container__cardR {
+    display: flex;
+    flex-direction: row;
+    padding: 2rem 0 0 0;
+    background: url('../images/Dog.jpg');
+    border-radius: 0;
+    border: none;
+    max-height: 450px;
+    overflow: hidden;
+
+    .div-typeR {
+        width: 100%;
+        align-self: flex-end;
+        font-size: 2rem;
+        text-align:center;
+        background-color: white;
+        width: 100%;
+        color: black;
+        
+    }
+
+    div img {
+        background-color: white;
+        padding: 2rem 2rem 0 1rem ;
+        border-radius: 0;                    
+        width: 400px;
+        
+    } 
 }
 
+.text-containerR {
+    padding-right: 1rem;
+    margin-bottom: 2rem;
+    font-size: 3rem;
+    background-color:#C4C4C4;
+    display: flex;
+    justify-content: space-between;
+
+    .div__brandR {
+        text-transform: uppercase;
+    }
+
+    .div__priceR{
+        background-color: #424242;
+        margin: 1rem 0 1rem .5rem;
+        padding:0 2rem;
+        background-color: rgb(146, 76, 76);
+        color: black;
+        font-weight: 600;
+        box-shadow: 0 0 5px white;
+    } 
+}

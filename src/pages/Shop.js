@@ -1,7 +1,7 @@
 import { Container, Row, Col, Accordion, ListGroup } from "react-bootstrap";
 import { useEffect, useState } from "react";
 import { ItemLeft, ItemRight } from "../components/Item";
-
+import Dog from '../images/Dog.jpg'
 import blue1 from "../images/blue1.jpg";
 import blue2 from "../images/blue2.jpg";
 import blue3 from "../images/blue3.jpg";
@@ -81,7 +81,7 @@ function Shop() {
         },
         {
           id: 2,
-          type: "Платье",
+          type: "Dress",
           brand: "Atmosphere",
           price: 250,
           imgSrc: blue1,
@@ -90,7 +90,7 @@ function Shop() {
         },
         {
           id: 3,
-          type: "Комбинезон",
+          type: "Оveralls",
           brand: "Vero Moda",
           price: 300,
           imgSrc: bod1,
@@ -99,7 +99,7 @@ function Shop() {
         },
         {
           id: 4,
-          type: "Боди",
+          type: "Bodysuit",
           brand: "Zara",
           price: 450,
           imgSrc: body1,
@@ -108,7 +108,7 @@ function Shop() {
         },
         {
           id: 5,
-          type: "Платье",
+          type: "Dress",
           brand: "Atmosphere",
           price: 50,
           imgSrc: white1,
@@ -117,7 +117,7 @@ function Shop() {
         },
         {
           id: 6,
-          type: "Гольф",
+          type: "Golf",
           brand: "Zara",
           price: 600,
           imgSrc: red1,
@@ -126,7 +126,7 @@ function Shop() {
         },
         {
           id: 7,
-          type: "Комбинезон",
+          type: "Overalls",
           brand: "BooHoo",
           price: 600,
           imgSrc: col1,
@@ -139,7 +139,13 @@ function Shop() {
 console.log(items)
   return (
     <Container style={{ display: "flex", marginTop: "6rem"  }}>
-      <div style={{ width: "20%", paddingRight: "2rem" }} className={'d-none  d-xl-block' }>
+      <div style={{ 
+        width: "20%", 
+        padding:'2rem',
+        
+        }}
+        className={'d-none  d-xl-block' 
+      }>
         
           <Accordion
           style={{
@@ -253,15 +259,57 @@ console.log(items)
       </div>
       <div style={{ width: "80%" }}>
         <Row>
-          <Col xl={6}> 
+          <Col xl={6} style={{padding:'0'}}> 
           {filteredItems.length ? 
-          filteredItems.map((item) => 
-           <ItemLeft key={item.id} item={item}/>)
-           : 
-           items.map((item) => 
-             <ItemLeft key={item.id} item={item}/>)}
+            filteredItems.map((item) => {
+              
+            if (filteredItems.indexOf(item) % 2 === 0) {
+            return (
+              <>
+            <ItemLeft key={item.id} item={item}/>
+            <div style={{border:'5px solid black', width:'200%', margin: '3rem 0'}}></div>
+            </>)
+          
+          }})
+            : 
+            items.map((item) => {
+            if (items.indexOf(item) % 2 === 0) {
+            return (
+              <>
+            <ItemLeft key={item.id} item={item}/>
+            <div style={{border:'5px solid black', width:'200%', margin: '3rem 0' }}></div>
+            </>)
+            }})
             
-        </Col></Row>
+          }
+          
+            
+        </Col>
+        <Col xl={6} style={{padding:'0'}}>
+        {filteredItems.length ? 
+            filteredItems.map((item) => {  
+            if (filteredItems.indexOf(item) % 2 !== 0) {
+            return (
+              <>
+              <ItemRight key={item.id} item={item}/>
+              <div style={{border:'5px solid black', margin: '3rem 0'}}></div>
+            
+          
+            </>)
+          }})
+            : 
+            items.map((item) => {
+            if (items.indexOf(item) % 2 !== 0) {
+            return (
+              <>
+              <ItemRight key={item.id} item={item}/>
+              <div style={{border:'5px solid black', margin: '3rem 0'}}></div>
+            
+          
+            </>)}})
+          }
+          </Col>
+        </Row>
       </div>
     </Container>
     
