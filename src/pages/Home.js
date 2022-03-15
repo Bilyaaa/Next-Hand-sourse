@@ -1,10 +1,11 @@
 import '../styles/Home.scss'
 import { Container, Button } from "react-bootstrap";
 import city from '../images/city.jpg';
-import Dog from '../images/Dog.jpg'
+import Girl from '../images/Girl.jpeg'
 import Wclothing from '../images/Wclothing.jpg'
 import { Link } from 'react-router-dom';
 import { SHOP_ROUTE } from '../utils/consts'
+
 
 
 function HomeSec1 () {
@@ -73,9 +74,9 @@ function Home() {
   <>  
  <HomeSec1/>
  <HomeSec2/>
- <HomeSec3 label='WOMEN' src={Wclothing}/>
+ <HomeSec3 label='WEMEN' src={Wclothing}/>
  <HomeSec2/>
- <HomeSec3 label='KID' src={Dog}/>
+ <HomeSec3 label='KIDS' src={Girl}/>
  </>   
   
     
