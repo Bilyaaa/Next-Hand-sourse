@@ -7,6 +7,8 @@ import '../styles/Item.scss'
 
 
 function ItemLeft({ item }) {
+
+ 
   return (
     <Link to={DEVICE_ROUTE + "/" + item.id} style={{ textDecoration: 'none', color: 'grey' }}>
       <Card className='container__card' key={item.id}>
@@ -23,10 +25,10 @@ function ItemLeft({ item }) {
 
 
 
-export { ItemLeft }
 
 
 function ItemRight({ item }) {
+
   return (
     <Link to={DEVICE_ROUTE + "/" + item.id} style={{ textDecoration: 'none', color: 'grey' }}>
     <Card className='container__cardR' key={item.id}>
@@ -43,4 +45,5 @@ function ItemRight({ item }) {
   )
 }
 
-export { ItemRight }
+
+export { ItemRight,ItemLeft  }

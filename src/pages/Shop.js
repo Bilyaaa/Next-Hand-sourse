@@ -1,7 +1,6 @@
 import { Container, Row, Col, Accordion, ListGroup } from "react-bootstrap";
 import { useEffect, useState } from "react";
 import { ItemLeft, ItemRight } from "../components/Item";
-import Dog from '../images/Dog.jpg'
 import blue1 from "../images/blue1.jpg";
 import blue2 from "../images/blue2.jpg";
 import blue3 from "../images/blue3.jpg";
@@ -68,7 +67,7 @@ function Shop() {
   }
 
   useEffect(() => {
-    
+   
       setItems([
         {
           id: 1,
@@ -133,10 +132,12 @@ function Shop() {
           imgSrc2: col2,
           imgSrc3: col3,
         },
-      ]);
-    
-  }, []);
+      ])
+  
+  }, [])
+   
 console.log(items)
+
   return (
     <Container style={{ display: "flex", marginTop: "6rem"  }}>
       <div style={{ 
@@ -261,51 +262,42 @@ console.log(items)
         <Row>
           <Col xl={6} style={{padding:'0'}}> 
           {filteredItems.length ? 
-            filteredItems.map((item) => {
-              
+            filteredItems.map((item) => {             
             if (filteredItems.indexOf(item) % 2 === 0) {
             return (
-              <>
-            <ItemLeft key={item.id} item={item}/>
-            <div style={{border:'5px solid black', width:'200%', margin: '3rem 0'}}></div>
-            </>)
-          
+            <>
+              <ItemLeft key={item.id} item={item}/>
+              <div style={{border:'5px solid black', width:'200%', margin: '3rem 0'}}></div>
+            </>)          
           }})
             : 
             items.map((item) => {
             if (items.indexOf(item) % 2 === 0) {
             return (
-              <>
-            <ItemLeft key={item.id} item={item}/>
-            <div style={{border:'5px solid black', width:'200%', margin: '3rem 0' }}></div>
+            <>
+              <ItemLeft key={item.id} item={item}/>
+              <div style={{border:'5px solid black', width:'200%', margin: '3rem 0'}}></div>
             </>)
-            }})
-            
-          }
-          
-            
+            }})         
+          }           
         </Col>
         <Col xl={6} style={{padding:'0'}}>
         {filteredItems.length ? 
             filteredItems.map((item) => {  
             if (filteredItems.indexOf(item) % 2 !== 0) {
-            return (
-              <>
-              <ItemRight key={item.id} item={item}/>
-              <div style={{border:'5px solid black', margin: '3rem 0'}}></div>
-            
-          
-            </>)
+              return (
+                <>
+                  <ItemRight key={item.id} item={item}/>
+                  <div style={{border:'5px solid black', margin: '3rem 0'}}></div>           
+              </>)
           }})
             : 
             items.map((item) => {
             if (items.indexOf(item) % 2 !== 0) {
             return (
               <>
-              <ItemRight key={item.id} item={item}/>
-              <div style={{border:'5px solid black', margin: '3rem 0'}}></div>
-            
-          
+                <ItemRight key={item.id} item={item}/>
+                <div style={{border:'5px solid black', margin: '3rem  0'}}></div>        
             </>)}})
           }
           </Col>

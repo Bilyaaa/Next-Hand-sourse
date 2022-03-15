@@ -8,6 +8,22 @@
     border: none;
     max-height: 450px;
     overflow: hidden;
+    
+    //     animation-duration: 2s;
+    //     animation-name: slidein;
+      
+      
+    //   @keyframes slidein {
+    //     from {
+    //       margin-right: 100%;
+    //       width: 300%;
+    //     }
+      
+    //     to {
+    //       margin-right: 0%;
+    //       width: 100%;
+    //     }
+    //   }
       
     .div-type {
         width: 100%;
@@ -62,6 +78,22 @@
     max-height: 450px;
     overflow: hidden;
 
+//     animation-duration: 2s;
+//     animation-name: slidein1;
+  
+  
+//   @keyframes slidein1 {
+//     from {
+//       margin-left: 100%;
+//       width: 300%;
+//     }
+  
+//     to {
+//       margin-left: 0%;
+//       width: 100%;
+//     }
+//   }
+
     .div-typeR {
         width: 100%;
         align-self: flex-end;
@@ -89,6 +121,7 @@
     background-color:#C4C4C4;
     display: flex;
     justify-content: space-between;
+    
 
     .div__brandR {
         text-transform: uppercase;
