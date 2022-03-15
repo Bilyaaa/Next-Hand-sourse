@@ -143,11 +143,13 @@ console.log(items)
       <div style={{ 
         width: "20%", 
         padding:'2rem',
-        
-        }}
+       }}
         className={'d-none  d-xl-block' 
-      }>
+      }> 
+      <div style={{
         
+        position:'fixed'
+      }}>
           <Accordion
           style={{
             marginBottom:'.7rem'
@@ -256,7 +258,7 @@ console.log(items)
               </Accordion.Body>
             </Accordion.Item>
           </Accordion>
-        
+        </div>
       </div>
       <div style={{ width: "80%" }}>
         <Row>
