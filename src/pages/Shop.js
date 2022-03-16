@@ -1,6 +1,7 @@
 import { Container, Row, Col, Accordion, ListGroup } from "react-bootstrap";
 import { useEffect, useState } from "react";
 import { ItemLeft, ItemRight } from "../components/Item";
+
 import blue1 from "../images/blue1.jpg";
 import blue2 from "../images/blue2.jpg";
 import blue3 from "../images/blue3.jpg";
@@ -29,7 +30,7 @@ function Shop() {
   const [selectBrand, setSelectBrand] = useState([]);
   const [selectType, setSelectType] = useState([]);
 
-  function brandSelect() {
+   function brandSelect() {
     let selectBrand = items.reduce((acc, item) => {
       if (!acc.includes(item.brand)) {
         acc.push(item.brand);
@@ -51,11 +52,9 @@ function Shop() {
 
   function filteredBrand(value) {
     let filteredItems = items.filter((item) => {
-      if (item.brand === value || item.type === value) {
-        return item;
-      }
+      if (item.brand === value || item.type === value) {return item} else return null
+      
     });
-
     setFilteredItems(filteredItems);
   }
 
@@ -67,122 +66,114 @@ function Shop() {
   }
 
   useEffect(() => {
-   
-      setItems([
-        {
-          id: 1,
-          type: "Skirt",
-          brand: "Divided",
-          price: 150,
-          imgSrc: shi1,
-          imgSrc2: shi2,
-          imgSrc3: shi3,
-        },
-        {
-          id: 2,
-          type: "Dress",
-          brand: "Atmosphere",
-          price: 250,
-          imgSrc: blue1,
-          imgSrc2: blue2,
-          imgSrc3: blue3,
-        },
-        {
-          id: 3,
-          type: "Оveralls",
-          brand: "Vero Moda",
-          price: 300,
-          imgSrc: bod1,
-          imgSrc2: bod2,
-          imgSrc3: bod3,
-        },
-        {
-          id: 4,
-          type: "Bodysuit",
-          brand: "Zara",
-          price: 450,
-          imgSrc: body1,
-          imgSrc2: body2,
-          imgSrc3: body3,
-        },
-        {
-          id: 5,
-          type: "Dress",
-          brand: "Atmosphere",
-          price: 50,
-          imgSrc: white1,
-          imgSrc2: white2,
-          imgSrc3: white3,
-        },
-        {
-          id: 6,
-          type: "Golf",
-          brand: "Zara",
-          price: 600,
-          imgSrc: red1,
-          imgSrc2: red2,
-          imgSrc3: red3,
-        },
-        {
-          id: 7,
-          type: "Overalls",
-          brand: "BooHoo",
-          price: 600,
-          imgSrc: col1,
-          imgSrc2: col2,
-          imgSrc3: col3,
-        },
-      ])
-  
-  }, [])
-   
-console.log(items)
+    setItems([
+      {
+        id: 1,
+        type: "Skirt",
+        brand: "Divided",
+        price: 150,
+        imgSrc: shi1,
+        imgSrc2: shi2,
+        imgSrc3: shi3,
+      },
+      {
+        id: 2,
+        type: "Dress",
+        brand: "Atmosphere",
+        price: 250,
+        imgSrc: blue1,
+        imgSrc2: blue2,
+        imgSrc3: blue3,
+      },
+      {
+        id: 3,
+        type: "Оveralls",
+        brand: "Vero Moda",
+        price: 300,
+        imgSrc: bod1,
+        imgSrc2: bod2,
+        imgSrc3: bod3,
+      },
+      {
+        id: 4,
+        type: "Bodysuit",
+        brand: "Zara",
+        price: 450,
+        imgSrc: body1,
+        imgSrc2: body2,
+        imgSrc3: body3,
+      },
+      {
+        id: 5,
+        type: "Dress",
+        brand: "Atmosphere",
+        price: 50,
+        imgSrc: white1,
+        imgSrc2: white2,
+        imgSrc3: white3,
+      },
+      {
+        id: 6,
+        type: "Golf",
+        brand: "Zara",
+        price: 600,
+        imgSrc: red1,
+        imgSrc2: red2,
+        imgSrc3: red3,
+      },
+      {
+        id: 7,
+        type: "Overalls",
+        brand: "BooHoo",
+        price: 600,
+        imgSrc: col1,
+        imgSrc2: col2,
+        imgSrc3: col3,
+      },
+    ]);
+  }, []);
+
+  console.log(items);
+
 
   return (
-    <Container style={{ display: "flex", marginTop: "6rem"  }}>
-      <div style={{ 
-        width: "20%", 
-        padding:'2rem',
-       }}
-        className={'d-none  d-xl-block' 
-      }> 
-      <div style={{
-        
-        position:'fixed'
-      }}>
+    <Container style={{  marginTop: "6rem" }}>
+      <div  style={{position:'sticky',top:'120px',zIndex:'90' }}>
+        <div style={{ display:'flex',justifyContent:'space-between'}}>
           <Accordion
-          style={{
-            marginBottom:'.7rem'
-          }}
-          >
-            <Accordion.Item 
             style={{
-              borderRadius: 0, 
+             width:'30%',
+            
+          
             }}
-            eventKey="1">
-              <Accordion.Header onClick={brandSelect}>Бренды</Accordion.Header>
-              <Accordion.Body 
-              style={{padding: "0"}}>
-                <ListGroup
-                 style={{borderRadius: 0}}>
+          >
+            <Accordion.Item
+              style={{
+                borderRadius: 0,
+              }}
+              eventKey="1"
+            >
+              <Accordion.Header onClick={brandSelect}>BRANDS</Accordion.Header>
+              <Accordion.Body style={{ padding: "0", zIndex:'95' }}>
+                <ListGroup style={{ borderRadius: 0 }}>
                   <ListGroup.Item
                     style={{
-                      borderLeft:'none',
-                      borderRight:'none',
+                      borderLeft: "none",
+                      borderRight: "none",
                     }}
                     action
                     variant="light"
                     onClick={filteredAllBrand}
                   >
-                    Все
+                    ALL
                   </ListGroup.Item>
 
                   {selectBrand.map((item) => (
                     <ListGroup.Item
-                    style={{
-                      borderLeft:'none',
-                      borderRight:'none',
-                    }}
+                      style={{
+                        borderLeft: "none",
+                        borderRight: "none",
+                      }}
                       key={item}
                       action
                       variant="light"
@@ -197,39 +188,42 @@ console.log(items)
                 </ListGroup>
               </Accordion.Body>
             </Accordion.Item>
-            </Accordion>
-            <Accordion
+          </Accordion>
+          <Accordion
             style={{
-              marginBottom:'.7rem'
+              width:'30%',
+             
+
             }}
+          >
+            <Accordion.Item
+              eventKey="2"
+              style={{
+                borderRadius: 0,
+              }}
             >
-            <Accordion.Item 
-            eventKey="2"
-            style={{
-              borderRadius: 0
-            }}>
               <Accordion.Header onClick={typeSelect}>
-                Женская одежда
+                WOMEN CLOTHING
               </Accordion.Header>
               <Accordion.Body style={{ padding: "0" }}>
-                <ListGroup style={{borderRadius: 0}}>
+                <ListGroup style={{ borderRadius: 0 }}>
                   <ListGroup.Item
-                     style={{
-                      borderLeft:'none',
-                      borderRight:'none',
+                    style={{
+                      borderLeft: "none",
+                      borderRight: "none",
                     }}
                     action
                     variant="light"
                     onClick={filteredAllBrand}
                   >
-                    Все
+                    ALL
                   </ListGroup.Item>
                   {selectType.map((item) => (
                     <ListGroup.Item
-                    style={{
-                      borderLeft:'none',
-                      borderRight:'none',
-                    }}
+                      style={{
+                        borderLeft: "none",
+                        borderRight: "none",
+                      }}
                       key={item}
                       action
                       variant="light"
@@ -244,72 +238,99 @@ console.log(items)
                 </ListGroup>
               </Accordion.Body>
             </Accordion.Item>
-            </Accordion>
-            <Accordion>
-            <Accordion.Item 
-            style={{
-              borderRadius: 0
-            }}
-            eventKey="3"
+          </Accordion>
+          <Accordion style={{width:'30%', }}>
+            <Accordion.Item
+              style={{
+                borderRadius: 0,
+                
+              }}
+              eventKey="3"
             >
-              <Accordion.Header>Детская одежда</Accordion.Header>
-              <Accordion.Body style={{ padding: "0" }}>
-               
-              </Accordion.Body>
+              <Accordion.Header>KIDS CLOTHING</Accordion.Header>
+              <Accordion.Body style={{ padding: "0" }}></Accordion.Body>
             </Accordion.Item>
           </Accordion>
         </div>
       </div>
-      <div style={{ width: "80%" }}>
+      <div >
         <Row>
-          <Col xl={6} style={{padding:'0'}}> 
-          {filteredItems.length ? 
-            filteredItems.map((item) => {             
-            if (filteredItems.indexOf(item) % 2 === 0) {
-            return (
-            <>
-              <ItemLeft key={item.id} item={item}/>
-              <div style={{border:'5px solid black', width:'200%', margin: '3rem 0'}}></div>
-            </>)          
-          }})
-            : 
-            items.map((item) => {
-            if (items.indexOf(item) % 2 === 0) {
-            return (
-            <>
-              <ItemLeft key={item.id} item={item}/>
-              <div style={{border:'5px solid black', width:'200%', margin: '3rem 0'}}></div>
-            </>)
-            }})         
-          }           
-        </Col>
-        <Col xl={6} style={{padding:'0'}}>
-        {filteredItems.length ? 
-            filteredItems.map((item) => {  
-            if (filteredItems.indexOf(item) % 2 !== 0) {
-              return (
-                <>
-                  <ItemRight key={item.id} item={item}/>
-                  <div style={{border:'5px solid black', margin: '3rem 0'}}></div>           
-              </>)
-          }})
-            : 
-            items.map((item) => {
-            if (items.indexOf(item) % 2 !== 0) {
-            return (
-              <>
-                <ItemRight key={item.id} item={item}/>
-                <div style={{border:'5px solid black', margin: '3rem  0'}}></div>        
-            </>)}})
-          }
+          <Col xl={6} style={{ padding: "0" }}>
+            {filteredItems.length
+              ? filteredItems.map((item) => {
+                  if (filteredItems.indexOf(item) % 2 === 0) {
+                    return (
+                      <>
+                        <ItemLeft key={item.id} item={item} />
+                        <div
+                          style={{
+                            border: "5px solid black",
+                            width: "200%",
+                            margin: "3rem 0",
+                          }}
+                        ></div>
+                      </>
+                    );
+                  }
+                  else return null;
+                })
+              : items.map((item) => {
+                  if (items.indexOf(item) % 2 === 0) {
+                    return (
+                      <>
+                        <ItemLeft key={item.id} item={item} />
+                        <div
+                          style={{
+                            border: "5px solid black",
+                            width: "200%",
+                            margin: "3rem 0",
+                          }}
+                        ></div>
+                      </>
+                    );
+                  }
+                  else return null;
+                })}
+          </Col>
+          <Col xl={6} style={{ padding: "0" }}>
+            {filteredItems.length
+              ? filteredItems.map((item) => {
+                  if (filteredItems.indexOf(item) % 2 !== 0) {
+                    return (
+                      <>
+                        <ItemRight key={item.id} item={item} />
+                        <div
+                          style={{
+                            border: "5px solid black",
+                            margin: "3rem 0",
+                          }}
+                        ></div>
+                      </>
+                    );
+                  }
+                  else return null;
+                })
+              : items.map((item) => {
+                  if (items.indexOf(item) % 2 !== 0) {
+                    return (
+                      <>
+                        <ItemRight key={item.id} item={item} />
+                        <div
+                          style={{
+                            border: "5px solid black",
+                            margin: "3rem 0",
+                          }}
+                        ></div>
+                      </>
+                    );
+                  }
+                  else return null;
+                })}
           </Col>
         </Row>
       </div>
     </Container>
-    
   );
-  
 }
-
 
 export default Shop;

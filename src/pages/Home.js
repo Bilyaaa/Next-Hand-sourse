@@ -25,7 +25,7 @@ function HomeSec1 () {
       </div>
     </div>
     <div className='home__container__img_container2'>
-      <img src={city}/>
+      <img src={city} alt='city'/>
     </div>
   </Container>
   )
@@ -46,7 +46,7 @@ function HomeSec3 (props) {
   return (
     <Container className='home__container3'>
       <div className='home__container3__img'>
-        <img src={props.src}/>
+        <img src={props.src} alt={props.alt}/>
       </div>      
       <div className='home__container3__div'>
         <div className='home__container3__div-block1'>
@@ -74,9 +74,9 @@ function Home() {
   <>  
  <HomeSec1/>
  <HomeSec2/>
- <HomeSec3 label='WEMEN' src={Wclothing}/>
+ <HomeSec3 label='WEMEN' src={Wclothing} alt='wclothing'/>
  <HomeSec2/>
- <HomeSec3 label='KIDS' src={Girl}/>
+ <HomeSec3 label='KIDS' src={Girl} alt='kids'/>
  </>   
   
     

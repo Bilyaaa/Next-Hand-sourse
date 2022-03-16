@@ -1,4 +1,5 @@
 import { Navbar, Nav, Container } from "react-bootstrap";
+
 import React from "react";
 import {
   HOME_ROUTE,
@@ -20,6 +21,7 @@ function Header() {
         top: "0",
         maxWidth: "100%",
         background: "white",
+        borderBottom:'2px solid black'
       }}
     >
       <Navbar expand="lg">
@@ -30,11 +32,23 @@ function Header() {
           >
             NEXT HAND
           </Navbar.Brand>
+
+
+
+
+
+     
+
+
+
+
+
           <Navbar.Collapse
             id="basic-navbar-nav"
             style={{ justifyContent: "flex-end" }}
           >
             <Nav>
+              
               <Nav.Link className="nav-menu-a" href={SHOP_ROUTE}>Shop</Nav.Link>
               <Nav.Link className="nav-menu-a" href={BASKET_ROUTE}>Basket</Nav.Link>
               <Nav.Link className="nav-menu-a" href={DELIVERY_ROUTE}>Delivery</Nav.Link>
