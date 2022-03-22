@@ -140,7 +140,7 @@ function Shop() {
     <Container style={{  marginTop: "6rem", display:'flex' }}>
       <div  style={{width:'20%'}}>
         <div style={{ position:'fixed', zIndex:'90', top:'15rem', left:'16rem' }}>
-          <Accordion style={{marginBottom:'0.7rem', border:'none'}}
+          <Accordion style={{marginBottom:'0.7rem', borderBottom:'4px solid bisque'}}
           
           >
             <Accordion.Item
@@ -186,7 +186,7 @@ function Shop() {
               </Accordion.Body>
             </Accordion.Item>
           </Accordion>
-          <Accordion style={{marginBottom:'0.7rem'}}
+          <Accordion style={{marginBottom:'0.7rem', borderBottom:'4px solid bisque'}}
          
           >
             <Accordion.Item
@@ -233,7 +233,7 @@ function Shop() {
               </Accordion.Body>
             </Accordion.Item>
           </Accordion>
-          <Accordion>
+          <Accordion style={{borderBottom:'4px solid bisque'}}>
             <Accordion.Item
               style={{
                 borderRadius: 0,
