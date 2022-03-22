@@ -29,14 +29,13 @@ function Header() {
           <Navbar.Brand
             href={HOME_ROUTE}
             style={{ letterSpacing: ".4em", fontSize: "1.7rem" }}
-            
           >
             NEXT HAND
           </Navbar.Brand>
 
 
 
-<div className='cont'></div>
+
 
      
 
