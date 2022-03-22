@@ -1,7 +1,11 @@
 import { Container, Row, Col, Accordion, ListGroup } from "react-bootstrap";
 import { useEffect, useState } from "react";
 import { ItemLeft, ItemRight } from "../components/Item";
-
+<<<<<<< HEAD
+import $ from 'jquery'
+import Filters from "../components/Filters";
+=======
+>>>>>>> f4f4f1f9596fa8659bdde923ca4724faeb0a2082
 import blue1 from "../images/blue1.jpg";
 import blue2 from "../images/blue2.jpg";
 import blue3 from "../images/blue3.jpg";
@@ -23,6 +27,11 @@ import white3 from "../images/white3.jpg";
 import col1 from "../images/col1.jpg";
 import col2 from "../images/col2.jpg";
 import col3 from "../images/col3.jpg";
+<<<<<<< HEAD
+import { Button } from "bootstrap";
+=======
+import '../styles/Shop.scss'
+>>>>>>> f4f4f1f9596fa8659bdde923ca4724faeb0a2082
 
 function Shop() {
   const [items, setItems] = useState([]);
@@ -137,6 +146,8 @@ function Shop() {
 
 
   return (
+<<<<<<< HEAD
+    $('.cont').append('<Filters>ggg</Filters>'),
     <Container style={{  marginTop: "6rem" }}>
       <div  style={{position:'sticky',top:'120px',zIndex:'90' }}>
         <div style={{ display:'flex',justifyContent:'space-between'}}>
@@ -144,12 +155,18 @@ function Shop() {
             style={{
              width:'30%',
             
+=======
+    <Container style={{  marginTop: "6rem", display:'flex' }}>
+      <div  style={{width:'20%'}}>
+        <div style={{ position:'fixed', zIndex:'90', top:'15rem', left:'16rem' }}>
+          <Accordion style={{marginBottom:'0.7rem', borderBottom:'4px solid bisque'}}
+>>>>>>> f4f4f1f9596fa8659bdde923ca4724faeb0a2082
           
-            }}
           >
             <Accordion.Item
               style={{
                 borderRadius: 0,
+                border:'none'
               }}
               eventKey="1"
             >
@@ -189,17 +206,14 @@ function Shop() {
               </Accordion.Body>
             </Accordion.Item>
           </Accordion>
-          <Accordion
-            style={{
-              width:'30%',
-             
-
-            }}
+          <Accordion style={{marginBottom:'0.7rem', borderBottom:'4px solid bisque'}}
+         
           >
             <Accordion.Item
               eventKey="2"
               style={{
                 borderRadius: 0,
+                border:'none'
               }}
             >
               <Accordion.Header onClick={typeSelect}>
@@ -239,10 +253,11 @@ function Shop() {
               </Accordion.Body>
             </Accordion.Item>
           </Accordion>
-          <Accordion style={{width:'30%', }}>
+          <Accordion style={{borderBottom:'4px solid bisque'}}>
             <Accordion.Item
               style={{
                 borderRadius: 0,
+                border:'none'
                 
               }}
               eventKey="3"
@@ -253,7 +268,7 @@ function Shop() {
           </Accordion>
         </div>
       </div>
-      <div >
+      <div style={{width:'80%'}}>
         <Row>
           <Col xl={6} style={{ padding: "0" }}>
             {filteredItems.length
