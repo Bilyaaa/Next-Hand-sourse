@@ -139,7 +139,7 @@ function Shop() {
   return (
     <Container style={{  marginTop: "6rem", display:'flex' }}>
       <div  style={{width:'20%'}}>
-        <div style={{ position:'fixed', zIndex:'90', top:'15rem', left:'16rem' }}>
+        <div style={{ position:'fixed', zIndex:'90', top:'15rem', marginLeft:'6rem' }}>
           <Accordion style={{marginBottom:'0.7rem', border:'none', borderBottom:'4px solid bisque'}}
           
           >
