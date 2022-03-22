@@ -1,4 +1,40 @@
-.accordion-button:hover {
-    color: red
+.mainContainer {
+    margin-top: 6rem;
+    display: flex;
 
+    .filterContainer {
+        width: 20%;
+        .filter {
+            position: fixed;
+            z-index: 90;
+            top: 15rem;
+            margin-left: 6rem;
+
+            .accordion {
+                margin-bottom: 0.7rem;
+                border: none;
+                border-bottom: 4px solid bisque;
+
+                .accordion-item {
+                    border-radius: 0;
+                    border: none;
+
+                    .accordion-button {
+                        &:not(.collapsed) {
+                            color: red !important;
+                        }
+
+                        &:hover {
+                            color: red;
+                        }
+                    }
+
+                    .list-group-item {
+                        border-left: none;
+                        border-right: none;
+                    }
+                }
+            }
+        }
+    }
 }

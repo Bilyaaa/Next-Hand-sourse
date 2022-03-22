@@ -5,6 +5,7 @@ import { items, SHOP_ROUTE } from "../utils/consts";
 import Swal from 'sweetalert2'
 import ZoomImg from "../components/ZoomImg";
 import $ from 'jquery'
+import '../styles/DevicePage.scss'
 
 function DevicePage() {
   let storedData = localStorage.getItem("basket");
@@ -29,66 +30,51 @@ function DevicePage() {
     if (item.id === myId) {
       return item;
     }
+    else {
+      return null
+    }
   });
   return myItem.map((i) => (
-    <Container
-    
-      key={i.id}
-      style={{ marginTop: "6rem", display: "flex", position: "relative" }}
-    >
+   
+    <Container className="mainItemContainer" key={i.id}>
       <ZoomImg i={i}></ZoomImg>
-      <div
-        style={{
-          fontSize: "10rem",
-          position: "absolute",
-          left: "-8rem",
-          top: "-5rem",
-        }}
-      >
-        <Link
-          to={SHOP_ROUTE}
-          style={{ textDecoration: "none", color: "black" }}
-        >
+      <div className="arrow">
+        <Link to={SHOP_ROUTE}>
           &#8249;
         </Link>
       </div>
-      <div style={{ width: "45%", position:'relative' }}>
-        <div 
-        
-        className="lupa-item"
-        style={{fontSize:'3rem', position:'absolute', zIndex:'100', display:'flex', width:'100%', paddingRight:'.8rem', justifyContent:'flex-end', cursor:'pointer', opacity:'.7'}}
+      <div className="imgContainer">
+      <div className="lupa-item"       
         onClick={(e) => {
         $('.drop-item').css('display', 'block')
         $('.hide-item').css('display', 'none')
         $('.lupa-item').css('display', 'none')
       }}
-        >&#128269;</div>
-        <Carousel className="hide-item" interval={10000}>
-          <Carousel.Item>
-            <img className="d-block w-100" src={i.imgSrc} alt="First slide" />
+        >&#128269;
+      </div>
+        <Carousel className="hide-item" interval={3000}>
+          <Carousel.Item className="car1">
+            <img className="d-block w-100 " src={i.imgSrc} alt="First slide" />
           </Carousel.Item>
-          <Carousel.Item>
-            <img className="d-block w-100" src={i.imgSrc2} alt="Second slide" />
+          <Carousel.Item className="car2">
+            <img className="d-block w-100 car" src={i.imgSrc2} alt="Second slide" />
           </Carousel.Item>
-          <Carousel.Item>
-            <img className="d-block w-100" src={i.imgSrc3} alt="Third slide" />
+          <Carousel.Item className="car3">
+            <img className="d-block w-100 car" src={i.imgSrc3} alt="Third slide" />
           </Carousel.Item>
         </Carousel>
+      
       </div>
-      <div style={{ marginLeft: "5rem", width: "50%" }}>
+      <div className="itemInfo">
         <Card.Body style={{ padding: "1rem 0" }}>
-          <Card.Title
-            style={{ fontSize: "5rem", fontWeight: "300", color: "grey" }}
-          >
-            {i.name}{" "}
-            <span style={{ color: "black", fontWeight: "400" }}>{i.brand}</span>
+          <Card.Title className="cardType">
+            {i.type}{" "}
+            <span>{i.brand}</span>
           </Card.Title>
-          <Card.Text
-            style={{ fontSize: "2rem", fontWeight: "300", color: "grey" }}
-          >
-            Стоимость:{" "}
-            <span style={{ color: "black", fontWeight: "400" }}>
-              {i.price} грн
+          <Card.Text className="cardText">
+            PRICE:{" "}
+            <span >
+              {i.price} ₴
             </span>{" "}
           </Card.Text>
         </Card.Body>
@@ -113,22 +99,38 @@ function DevicePage() {
             marginRight: "2rem",
           }}
         >
-          В корзину
+           add to basket
         </Button>
-        <Button
-          variant="outline-dark"
-          onClick={(e) => {
-            localStorage.clear();
-            console.log(localStorage);
-            basketItems = [];
-            
-          }}
-        >
-          Очистить
-        </Button>
+        <Container className="smalPicsContainer" key={i.type}>
+      <img src={i.imgSrc}  alt='1' 
+        style={{cursor:'pointer'}}
+        onClick={(e) => {
+        $('.car1').addClass('active')
+        $('.car2').removeClass('active')
+        $('.car3').removeClass('active')
+      }}>
+      </img>
+      <img src={i.imgSrc2}  alt='2' 
+        style={{cursor:'pointer'}}
+        onClick={(e) => {
+        $('.car2').addClass('active')
+        $('.car1').removeClass('active')
+        $('.car3').removeClass('active')
+        }}></img>
+      <img src={i.imgSrc3}  alt='3' 
+        style={{cursor:'pointer'}}
+        onClick={(e) => {
+        $('.car3').addClass('active')
+        $('.car2').removeClass('active')
+        $('.car1').removeClass('active')
+    }}></img>
+    </Container>
        
       </div>
     </Container>
+    
+   
+    
   ));
 }
 

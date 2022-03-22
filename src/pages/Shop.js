@@ -30,7 +30,7 @@ function Shop() {
   const [selectBrand, setSelectBrand] = useState([]);
   const [selectType, setSelectType] = useState([]);
 
-   function brandSelect() {
+  function brandSelect() {
     let selectBrand = items.reduce((acc, item) => {
       if (!acc.includes(item.brand)) {
         acc.push(item.brand);
@@ -52,8 +52,8 @@ function Shop() {
 
   function filteredBrand(value) {
     let filteredItems = items.filter((item) => {
-      if (item.brand === value || item.type === value) {return item} else return null
-      
+      if (item.brand === value || item.type === value) { return item } else return null
+
     });
     setFilteredItems(filteredItems);
   }
@@ -87,7 +87,7 @@ function Shop() {
       },
       {
         id: 3,
-        type: "Оveralls",
+        type: "Overalls",
         brand: "Vero Moda",
         price: 300,
         imgSrc: bod1,
@@ -137,40 +137,22 @@ function Shop() {
 
 
   return (
-    <Container style={{  marginTop: "6rem", display:'flex' }}>
-      <div  style={{width:'20%'}}>
-        <div style={{ position:'fixed', zIndex:'90', top:'15rem', marginLeft:'6rem' }}>
-          <Accordion style={{marginBottom:'0.7rem', border:'none', borderBottom:'4px solid bisque'}}
-          
-          >
-            <Accordion.Item
-              style={{
-                borderRadius: 0,
-                border:'none'
-              }}
-              eventKey="1"
-            >
+    <Container className="mainContainer">
+      <div className="filterContainer">
+        <div className="filter">
+          <Accordion>
+            <Accordion.Item eventKey="1">
               <Accordion.Header onClick={brandSelect}>BRANDS</Accordion.Header>
-              <Accordion.Body style={{ padding: "0", zIndex:'95' }}>
+              <Accordion.Body style={{ padding: "0", zIndex: '95' }}>
                 <ListGroup style={{ borderRadius: 0 }}>
                   <ListGroup.Item
-                    style={{
-                      borderLeft: "none",
-                      borderRight: "none",
-                    }}
                     action
-                    variant="light"
-                    onClick={filteredAllBrand}
-                  >
+                    variant="light" onClick={filteredAllBrand}>
                     ALL
                   </ListGroup.Item>
 
                   {selectBrand.map((item) => (
                     <ListGroup.Item
-                      style={{
-                        borderLeft: "none",
-                        borderRight: "none",
-                      }}
                       key={item}
                       action
                       variant="light"
@@ -186,15 +168,9 @@ function Shop() {
               </Accordion.Body>
             </Accordion.Item>
           </Accordion>
-          <Accordion style={{marginBottom:'0.7rem',borderBottom:'4px solid bisque'}}
-         
-          >
+          <Accordion>
             <Accordion.Item
               eventKey="2"
-              style={{
-                borderRadius: 0,
-                border:'none'
-              }}
             >
               <Accordion.Header onClick={typeSelect}>
                 WOMEN CLOTHING
@@ -202,10 +178,6 @@ function Shop() {
               <Accordion.Body style={{ padding: "0" }}>
                 <ListGroup style={{ borderRadius: 0 }}>
                   <ListGroup.Item
-                    style={{
-                      borderLeft: "none",
-                      borderRight: "none",
-                    }}
                     action
                     variant="light"
                     onClick={filteredAllBrand}
@@ -214,10 +186,6 @@ function Shop() {
                   </ListGroup.Item>
                   {selectType.map((item) => (
                     <ListGroup.Item
-                      style={{
-                        borderLeft: "none",
-                        borderRight: "none",
-                      }}
                       key={item}
                       action
                       variant="light"
@@ -233,13 +201,9 @@ function Shop() {
               </Accordion.Body>
             </Accordion.Item>
           </Accordion>
-          <Accordion style={{borderBottom:'4px solid bisque'}}>
+          <Accordion >
             <Accordion.Item
-              style={{
-                borderRadius: 0,
-                border:'none'
-                
-              }}
+
               eventKey="3"
             >
               <Accordion.Header>KIDS CLOTHING</Accordion.Header>
@@ -248,79 +212,57 @@ function Shop() {
           </Accordion>
         </div>
       </div>
-      <div style={{width:'80%'}}>
+      <div style={{ width: '80%' }}>
         <Row>
           <Col xl={6} style={{ padding: "0" }}>
             {filteredItems.length
               ? filteredItems.map((item) => {
-                  if (filteredItems.indexOf(item) % 2 === 0) {
-                    return (
-                      <>
-                        <ItemLeft key={item.id} item={item} />
-                        <div
-                          style={{
-                            border: "5px solid black",
-                            width: "200%",
-                            margin: "3rem 0",
-                          }}
-                        ></div>
-                      </>
-                    );
-                  }
-                  else return null;
-                })
+                if (filteredItems.indexOf(item) % 2 === 0) {
+                  return (
+                    <>
+                      <ItemLeft key={item.id} item={item} />
+                      <div className="blackLine"></div>
+                    </>
+                  );
+                }
+                else return null;
+              })
               : items.map((item) => {
-                  if (items.indexOf(item) % 2 === 0) {
-                    return (
-                      <>
-                        <ItemLeft key={item.id} item={item} />
-                        <div
-                          style={{
-                            border: "5px solid black",
-                            width: "200%",
-                            margin: "3rem 0",
-                          }}
-                        ></div>
-                      </>
-                    );
-                  }
-                  else return null;
-                })}
+                if (items.indexOf(item) % 2 === 0) {
+                  return (
+                    <>
+                      <ItemLeft key={item.id} item={item} />
+                      <div className="blackLine"></div>
+                    </>
+                  );
+                }
+                else return null;
+              })}
           </Col>
           <Col xl={6} style={{ padding: "0" }}>
             {filteredItems.length
               ? filteredItems.map((item) => {
-                  if (filteredItems.indexOf(item) % 2 !== 0) {
-                    return (
-                      <>
-                        <ItemRight key={item.id} item={item} />
-                        <div
-                          style={{
-                            border: "5px solid black",
-                            margin: "3rem 0",
-                          }}
-                        ></div>
-                      </>
-                    );
-                  }
-                  else return null;
-                })
+                if (filteredItems.indexOf(item) % 2 !== 0) {
+                  return (
+                    <>
+                      <ItemRight key={item.id} item={item} />
+                      <div className="blackLineR"></div>
+                    </>
+                  );
+                }
+                else return null;
+              })
               : items.map((item) => {
-                  if (items.indexOf(item) % 2 !== 0) {
-                    return (
-                      <>
-                        <ItemRight key={item.id} item={item} />
-                        <div
-                          style={{
-                            border: "5px solid black",
-                            margin: "3rem 0",
-                          }}
-                        ></div>
-                      </>
-                    );
-                  }
-                  else return null;
-                })}
+                if (items.indexOf(item) % 2 !== 0) {
+                  return (
+                    <>
+                      <ItemRight key={item.id} item={item} />
+                      <div className="blackLineR"></div>
+                    </>
+                  );
+                }
+                else return null;
+              })}
           </Col>
         </Row>
       </div>

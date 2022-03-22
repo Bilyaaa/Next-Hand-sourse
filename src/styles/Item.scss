@@ -43,6 +43,7 @@
         padding: 4rem 1rem 0 2rem;
         border-radius: 0;
         width: 400px;
+        height: 530px;
     }     
 }
 
@@ -115,6 +116,7 @@
         padding: 4rem 2rem 0 1rem ;
         border-radius: 0;                    
         width: 400px;
+        height: 530px;
         
     } 
 }
@@ -144,4 +146,16 @@
         font-weight: 600;
         box-shadow: 0 0 5px white;
     } 
+}
+
+
+.blackLine {
+    border: 5px solid black;
+    margin: 3rem 0;
+    width: 200%;
+}
+
+.blackLineR {
+    border: 5px solid black;
+    margin: 3rem 0;
 }
