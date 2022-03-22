@@ -137,19 +137,16 @@ function Shop() {
 
 
   return (
-    <Container style={{  marginTop: "6rem" }}>
-      <div  style={{position:'sticky',top:'120px',zIndex:'90' }}>
-        <div style={{ display:'flex',justifyContent:'space-between'}}>
-          <Accordion
-            style={{
-             width:'30%',
-            
+    <Container style={{  marginTop: "6rem", display:'flex' }}>
+      <div  style={{width:'20%'}}>
+        <div style={{ position:'fixed', zIndex:'90', top:'15rem', left:'16rem' }}>
+          <Accordion style={{marginBottom:'0.7rem', border:'none'}}
           
-            }}
           >
             <Accordion.Item
               style={{
                 borderRadius: 0,
+                border:'none'
               }}
               eventKey="1"
             >
@@ -189,17 +186,14 @@ function Shop() {
               </Accordion.Body>
             </Accordion.Item>
           </Accordion>
-          <Accordion
-            style={{
-              width:'30%',
-             
-
-            }}
+          <Accordion style={{marginBottom:'0.7rem'}}
+         
           >
             <Accordion.Item
               eventKey="2"
               style={{
                 borderRadius: 0,
+                border:'none'
               }}
             >
               <Accordion.Header onClick={typeSelect}>
@@ -239,10 +233,11 @@ function Shop() {
               </Accordion.Body>
             </Accordion.Item>
           </Accordion>
-          <Accordion style={{width:'30%', }}>
+          <Accordion>
             <Accordion.Item
               style={{
                 borderRadius: 0,
+                border:'none'
                 
               }}
               eventKey="3"
@@ -253,7 +248,7 @@ function Shop() {
           </Accordion>
         </div>
       </div>
-      <div >
+      <div style={{width:'80%'}}>
         <Row>
           <Col xl={6} style={{ padding: "0" }}>
             {filteredItems.length
