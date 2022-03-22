@@ -1,7 +1,8 @@
 import { Container, Row, Col, Accordion, ListGroup } from "react-bootstrap";
 import { useEffect, useState } from "react";
 import { ItemLeft, ItemRight } from "../components/Item";
-
+import $ from 'jquery'
+import Filters from "../components/Filters";
 import blue1 from "../images/blue1.jpg";
 import blue2 from "../images/blue2.jpg";
 import blue3 from "../images/blue3.jpg";
@@ -23,6 +24,7 @@ import white3 from "../images/white3.jpg";
 import col1 from "../images/col1.jpg";
 import col2 from "../images/col2.jpg";
 import col3 from "../images/col3.jpg";
+import { Button } from "bootstrap";
 
 function Shop() {
   const [items, setItems] = useState([]);
@@ -137,6 +139,7 @@ function Shop() {
 
 
   return (
+    $('.cont').append('<Filters>ggg</Filters>'),
     <Container style={{  marginTop: "6rem" }}>
       <div  style={{position:'sticky',top:'120px',zIndex:'90' }}>
         <div style={{ display:'flex',justifyContent:'space-between'}}>
