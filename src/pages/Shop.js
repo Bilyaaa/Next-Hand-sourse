@@ -1,7 +1,6 @@
 import { Container, Row, Col, Accordion, ListGroup } from "react-bootstrap";
 import { useEffect, useState } from "react";
 import { ItemLeft, ItemRight } from "../components/Item";
-
 import blue1 from "../images/blue1.jpg";
 import blue2 from "../images/blue2.jpg";
 import blue3 from "../images/blue3.jpg";
@@ -23,6 +22,7 @@ import white3 from "../images/white3.jpg";
 import col1 from "../images/col1.jpg";
 import col2 from "../images/col2.jpg";
 import col3 from "../images/col3.jpg";
+import '../styles/Shop.scss'
 
 function Shop() {
   const [items, setItems] = useState([]);
