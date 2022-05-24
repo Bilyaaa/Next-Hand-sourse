@@ -1,0 +1,41 @@
+{
+  "files": {
+    "main.css": "/static/css/main.0364e023.css",
+    "main.js": "/static/js/main.af98e32b.js",
+    "static/media/img1.jpg": "/static/media/img1.f5e2dc623dfffbb2ba6e.jpg",
+    "static/media/Town.jpg": "/static/media/Town.d1308f08aca97212e5de.jpg",
+    "static/media/body2.jpg": "/static/media/body2.9a52816c5110288e9b53.jpg",
+    "static/media/body1.jpg": "/static/media/body1.9db53714afde92371010.jpg",
+    "static/media/body3.jpg": "/static/media/body3.ebdfab07114606e809e5.jpg",
+    "static/media/col3.jpg": "/static/media/col3.4ae02ec9ac468c37b32d.jpg",
+    "static/media/blue1.jpg": "/static/media/blue1.4d60ae0a069410c98e5e.jpg",
+    "static/media/white1.jpg": "/static/media/white1.bdc05ccf8c67ddf0b189.jpg",
+    "static/media/bod3.jpg": "/static/media/bod3.dba1a56b339f559a92bf.jpg",
+    "static/media/bod2.jpg": "/static/media/bod2.363dd4c1b3d8c44bc404.jpg",
+    "static/media/white3.jpg": "/static/media/white3.425552bd41c5fc69026a.jpg",
+    "static/media/col2.jpg": "/static/media/col2.502dd909fa486a9bacf0.jpg",
+    "static/media/blue2.jpg": "/static/media/blue2.f5abfc634329937b211f.jpg",
+    "static/media/red3.jpg": "/static/media/red3.0ceba16addc8ba7be415.jpg",
+    "static/media/white2.jpg": "/static/media/white2.5716b03d9a919b0ba28d.jpg",
+    "static/media/shi3.jpg": "/static/media/shi3.dea8cbfa3998c011ef78.jpg",
+    "static/media/blue3.jpg": "/static/media/blue3.0456b3e141e6c7f648c8.jpg",
+    "static/media/col1.jpg": "/static/media/col1.3247aeea5b09ec9ad9e9.jpg",
+    "static/media/bod1.jpg": "/static/media/bod1.5cabce9788aa6e7ca1c4.jpg",
+    "static/media/red2.jpg": "/static/media/red2.1f77dbe0e32e9b7e7b49.jpg",
+    "static/media/red1.jpg": "/static/media/red1.8eebc023fc159d8d279d.jpg",
+    "static/media/shi2.jpg": "/static/media/shi2.358b10e56128ac1aa074.jpg",
+    "static/media/Girl.jpeg": "/static/media/Girl.1f76644fa9e0ab400015.jpeg",
+    "static/media/Wclothing.jpg": "/static/media/Wclothing.b30b3c19b6edde2c2f03.jpg",
+    "static/media/shi1.jpg": "/static/media/shi1.1526c475ede4dcdb0e13.jpg",
+    "static/media/Dog.jpg": "/static/media/Dog.4c6be80a60ba4da9cbf8.jpg",
+    "static/media/city.jpg": "/static/media/city.0bf8ce19b7c16885b5b2.jpg",
+    "static/media/fdehbsd.svg": "/static/media/fdehbsd.c49412dd04fd8be96862ce226824b37b.svg",
+    "index.html": "/index.html",
+    "main.0364e023.css.map": "/static/css/main.0364e023.css.map",
+    "main.af98e32b.js.map": "/static/js/main.af98e32b.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.0364e023.css",
+    "static/js/main.af98e32b.js"
+  ]
+}

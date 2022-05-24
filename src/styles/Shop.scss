@@ -38,3 +38,31 @@
         }
     }
 }
+
+@media(max-width: 400px) {
+    .mainContainer {
+        flex-direction: column;
+        .filterContainer {
+            .filter {
+                margin: 0 auto;
+                width: 400px !important;
+                top: 80px;
+                margin-left: 0;
+                :first-child {
+                    width: 100%;
+                }
+                .accordion {
+                    background-color: white;
+                }
+            }
+        }
+        :last-child {
+            width: 100% !important;
+            margin: 0 auto;
+            .container__card, .container__cardR {
+                background: none;
+                flex-direction: column;
+            }
+        }
+    }
+}

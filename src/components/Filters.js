@@ -1,7 +1,57 @@
 import { Accordion, ListGroup } from 'react-bootstrap'
+import { useContext, useState } from 'react'
+import { Context } from '../pages/Shop';
 
 
-function Filters ({brandSelect, selectBrand, filteredAllBrand, filteredBrand, typeSelect, selectType}) {
+
+
+function Filters ({items}) {
+
+  const [selectType, setSelectType] = useState([]);
+  const [selectBrand, setSelectBrand] = useState([]);
+  const {filteredItems, setFilteredItems} = useContext(Context)
+  
+
+  
+ 
+
+  function brandSelect() {
+    let selectBrand = items.reduce((acc, item) => {
+      if (!acc.includes(item.brand)) {
+        acc.push(item.brand);
+      }
+      return acc;
+    }, []);
+    setSelectBrand(selectBrand);
+  }
+
+  function typeSelect() {
+    let selectType = items.reduce((acc, item) => {
+      if (!acc.includes(item.type)) {
+        acc.push(item.type);
+      }
+      return acc;
+    }, []);
+    setSelectType(selectType);
+  }
+
+  
+  function filteredBrand(value) {
+   
+   let filtered = items.filter((item) => {
+      if (item.brand === value || item.type === value) { return item } else return null
+    });
+    setFilteredItems(filtered);
+   
+  }
+
+  function filteredAllBrand() {
+    let filtered = items.map((item) => {
+      return item;
+    });
+    setFilteredItems(filtered);
+  }
+
     return (
         
         <div style={{ display:'flex',justifyContent:'space-between'}}>

@@ -71,3 +71,36 @@
         width: 150px;
     }
 }
+
+
+@media (max-width: 400px) {
+    .mainItemContainer {
+        flex-direction: column;
+        
+        .imgContainer {
+            width: 90%;
+            margin: 0 auto;
+                .lupa-item {
+                    display: none;
+                    }
+        }
+
+        .itemInfo {
+            width: 90%;
+            margin: 0 auto;
+            .cardType {
+                font-size: 2rem;
+            }
+            button {
+                margin-right: 0 !important;
+            }
+            .smalPicsContainer {
+                margin-bottom: 2rem;
+                img {
+                    width: 100px;
+                }
+            }
+        }
+    }
+    
+}

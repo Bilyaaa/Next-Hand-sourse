@@ -1,6 +1,7 @@
-import { Container, Row, Col, Accordion, ListGroup } from "react-bootstrap";
+import { Container, Row, Col } from "react-bootstrap";
 import { useEffect, useState } from "react";
 import { ItemLeft, ItemRight } from "../components/Item";
+import  Filters from '../components/Filters'
 import '../styles/Shop.scss'
 import blue1 from "../images/blue1.jpg";
 import blue2 from "../images/blue2.jpg";
@@ -23,47 +24,15 @@ import white3 from "../images/white3.jpg";
 import col1 from "../images/col1.jpg";
 import col2 from "../images/col2.jpg";
 import col3 from "../images/col3.jpg";
+import React from "react";
+
+
+export const Context = React.createContext();
+
 
 function Shop() {
   const [items, setItems] = useState([]);
-  const [filteredItems, setFilteredItems] = useState([]);
-  const [selectBrand, setSelectBrand] = useState([]);
-  const [selectType, setSelectType] = useState([]);
-
-  function brandSelect() {
-    let selectBrand = items.reduce((acc, item) => {
-      if (!acc.includes(item.brand)) {
-        acc.push(item.brand);
-      }
-      return acc;
-    }, []);
-    setSelectBrand(selectBrand);
-  }
-
-  function typeSelect() {
-    let selectType = items.reduce((acc, item) => {
-      if (!acc.includes(item.type)) {
-        acc.push(item.type);
-      }
-      return acc;
-    }, []);
-    setSelectType(selectType);
-  }
-
-  function filteredBrand(value) {
-    let filteredItems = items.filter((item) => {
-      if (item.brand === value || item.type === value) { return item } else return null
-
-    });
-    setFilteredItems(filteredItems);
-  }
-
-  function filteredAllBrand() {
-    let filteredItems = items.map((item) => {
-      return item;
-    });
-    setFilteredItems(filteredItems);
-  }
+  const[filteredItems, setFilteredItems] = useState([]);
 
   useEffect(() => {
     setItems([
@@ -133,83 +102,13 @@ function Shop() {
     ]);
   }, []);
 
-  console.log(items);
-
-
   return (
+    <Context.Provider value={{filteredItems, setFilteredItems}}>
     <Container className="mainContainer">
       <div className="filterContainer">
         <div className="filter">
-          <Accordion>
-            <Accordion.Item eventKey="1">
-              <Accordion.Header onClick={brandSelect}>BRANDS</Accordion.Header>
-              <Accordion.Body style={{ padding: "0", zIndex: '95' }}>
-                <ListGroup style={{ borderRadius: 0 }}>
-                  <ListGroup.Item
-                    action
-                    variant="light" onClick={filteredAllBrand}>
-                    ALL
-                  </ListGroup.Item>
-
-                  {selectBrand.map((item) => (
-                    <ListGroup.Item
-                      key={item}
-                      action
-                      variant="light"
-                      onClick={(e) => {
-                        let value = e.currentTarget.textContent;
-                        filteredBrand(value);
-                      }}
-                    >
-                      {item}
-                    </ListGroup.Item>
-                  ))}
-                </ListGroup>
-              </Accordion.Body>
-            </Accordion.Item>
-          </Accordion>
-          <Accordion>
-            <Accordion.Item
-              eventKey="2"
-            >
-              <Accordion.Header onClick={typeSelect}>
-                WOMEN CLOTHING
-              </Accordion.Header>
-              <Accordion.Body style={{ padding: "0" }}>
-                <ListGroup style={{ borderRadius: 0 }}>
-                  <ListGroup.Item
-                    action
-                    variant="light"
-                    onClick={filteredAllBrand}
-                  >
-                    ALL
-                  </ListGroup.Item>
-                  {selectType.map((item) => (
-                    <ListGroup.Item
-                      key={item}
-                      action
-                      variant="light"
-                      onClick={(e) => {
-                        let value = e.currentTarget.textContent;
-                        filteredBrand(value);
-                      }}
-                    >
-                      {item}
-                    </ListGroup.Item>
-                  ))}
-                </ListGroup>
-              </Accordion.Body>
-            </Accordion.Item>
-          </Accordion>
-          <Accordion >
-            <Accordion.Item
-
-              eventKey="3"
-            >
-              <Accordion.Header>KIDS CLOTHING</Accordion.Header>
-              <Accordion.Body style={{ padding: "0" }}></Accordion.Body>
-            </Accordion.Item>
-          </Accordion>
+          <Filters items={items}></Filters>
+         
         </div>
       </div>
       <div style={{ width: '80%' }}>
@@ -267,6 +166,7 @@ function Shop() {
         </Row>
       </div>
     </Container>
+    </Context.Provider>
   );
 }
 

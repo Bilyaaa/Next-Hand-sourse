@@ -1,4 +1,5 @@
 import '../styles/Home.scss'
+import '../styles/Media.scss'
 import { Container, Button } from "react-bootstrap";
 import city from '../images/city.jpg';
 import Girl from '../images/Girl.jpeg'
@@ -13,7 +14,7 @@ function HomeSec1 () {
     <Container className='home__container'>
     <div className='home__container__img_container1'>
       <div className='home__container__img_container1-block1'>
-        <div        className='home__container__img_container1-block1-text1'>WELCOME</div>
+        <div className='home__container__img_container1-block1-text1'>WELCOME</div>
           <div className='home__container__img_container1-block1-text2'>
             To the site of used brand clothing
             <Link to={SHOP_ROUTE}>
@@ -50,7 +51,7 @@ function HomeSec3 (props) {
       </div>      
       <div className='home__container3__div'>
         <div className='home__container3__div-block1'>
-          {props.label} <span>CLOTHING</span>
+          {props.label} <p><span>CLOTHING</span></p>
             <div className='home__container3__div-block2'>
             <Link to={SHOP_ROUTE}>
             <Button variant='outline-light'>
