@@ -63,7 +63,7 @@ function Basket() {
 
 
                 <td>
-                  <img style={{ width: "100px" }} src={item.imgSrc}></img>
+                  <img style={{ width: "100px" }} src={item.imgSrc} alt={123}></img>
                 </td>
 
                 <td>{item.name}</td>

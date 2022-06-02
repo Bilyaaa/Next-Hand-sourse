@@ -1,5 +1,5 @@
 import { Navbar, Nav, Container } from "react-bootstrap";
-
+import { Burger } from '../components/Burger'
 import React from "react";
 import {
   HOME_ROUTE,
@@ -8,9 +8,10 @@ import {
   DELIVERY_ROUTE,
 } from "../utils/consts";
 import '../styles/Header.scss'
+import $ from 'jquery'
 
 function Header() {
-
+  $('.burger').css('display', 'none')
   return (
     <Container
       style={{
@@ -48,7 +49,7 @@ function Header() {
             style={{ justifyContent: "flex-end" }}
           >
             <Nav>
-              
+            <Burger/>
               <Nav.Link className="nav-menu-a" href={SHOP_ROUTE}>Shop</Nav.Link>
               <Nav.Link className="nav-menu-a" href={BASKET_ROUTE}>Basket</Nav.Link>
               <Nav.Link className="nav-menu-a" href={DELIVERY_ROUTE}>Delivery</Nav.Link>
@@ -57,6 +58,7 @@ function Header() {
             </Nav>
           </Navbar.Collapse>
         </Container>
+        
       </Navbar>
     </Container>
   );

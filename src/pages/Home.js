@@ -6,10 +6,12 @@ import Girl from '../images/Girl.jpeg'
 import Wclothing from '../images/Wclothing.jpg'
 import { Link } from 'react-router-dom';
 import { SHOP_ROUTE } from '../utils/consts'
+import $ from 'jquery'
 
-
-
+console.log($('.burger'))
+ 
 function HomeSec1 () {
+ 
   return (
     <Container className='home__container'>
     <div className='home__container__img_container1'>
