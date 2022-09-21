@@ -9,7 +9,7 @@ function Filters ({items}) {
 
   const [selectType, setSelectType] = useState([]);
   const [selectBrand, setSelectBrand] = useState([]);
-  const {filteredItems, setFilteredItems} = useContext(Context)
+  let {filteredItems, setFilteredItems} = useContext(Context)
   
 
   
@@ -38,18 +38,18 @@ function Filters ({items}) {
   
   function filteredBrand(value) {
    
-   let filtered = items.filter((item) => {
+   filteredItems = items.filter((item) => {
       if (item.brand === value || item.type === value) { return item } else return null
     });
-    setFilteredItems(filtered);
+    setFilteredItems(filteredItems);
    
   }
 
   function filteredAllBrand() {
-    let filtered = items.map((item) => {
+    filteredItems = items.map((item) => {
       return item;
     });
-    setFilteredItems(filtered);
+    setFilteredItems(filteredItems);
   }
 
     return (

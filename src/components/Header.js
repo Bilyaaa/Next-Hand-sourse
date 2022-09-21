@@ -2,6 +2,7 @@ import { Navbar, Nav, Container } from "react-bootstrap";
 import { Burger } from '../components/Burger'
 import React from "react";
 import {
+  ADMIN_ROUTE,
   HOME_ROUTE,
   BASKET_ROUTE,
   SHOP_ROUTE,
@@ -55,6 +56,7 @@ function Header() {
               <Nav.Link className="nav-menu-a" href={DELIVERY_ROUTE}>Delivery</Nav.Link>
               <Nav.Link className="nav-menu-a" href={BASKET_ROUTE}>Contacts</Nav.Link>
               <Nav.Link className="nav-menu-a" href={BASKET_ROUTE}>About Us</Nav.Link>
+              <Nav.Link className="nav-menu-a" href={ADMIN_ROUTE}>ADMIN</Nav.Link>
             </Nav>
           </Navbar.Collapse>
         </Container>

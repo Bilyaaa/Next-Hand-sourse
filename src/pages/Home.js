@@ -8,8 +8,8 @@ import { Link } from 'react-router-dom';
 import { SHOP_ROUTE } from '../utils/consts'
 import $ from 'jquery'
 
-console.log($('.burger'))
- 
+
+$('burger').hide()
 function HomeSec1 () {
  
   return (
