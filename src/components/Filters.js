@@ -1,6 +1,6 @@
 import { Accordion, ListGroup } from 'react-bootstrap'
 import { useContext, useState } from 'react'
-import { Context } from '../pages/Shop';
+import { Context } from '../App';
 
 
 

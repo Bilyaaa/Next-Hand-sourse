@@ -1,20 +1,13 @@
-import { useContext } from 'react';
-import { Route, Routes, Navigate } from 'react-router-dom'
 
+import { Route, Routes, Navigate } from 'react-router-dom'
 import { authRoutes, publicRoutes } from '../routes';
-import { Context } from '..';
 import { HOME_ROUTE } from '../utils/consts';
 
-const isAuth = true;
-const AppRouter = () => {
 
-    const {user} = useContext(Context)
-
-
-    
+const AppRouter = () => {  
     return (
         <Routes >
-            {user.isAuth && authRoutes.map(({path, Component}) =>
+            {authRoutes.map(({path, Component}) =>
                 <Route key={path} path={path} element={<Component/>} exact />
             )}
             {publicRoutes.map(({path, Component}) =>
@@ -25,5 +18,5 @@ const AppRouter = () => {
     );
 }
 
-export {isAuth}
+
 export default AppRouter;
