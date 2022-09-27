@@ -11,7 +11,7 @@ import { Context } from '../App'
 
 
 function Shop() {
-  const {items, setItems} = useContext(Context);
+  const {items} = useContext(Context);
   const{filteredItems, setFilteredItems} = useContext(Context);
 
 

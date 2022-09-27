@@ -8,7 +8,7 @@ import { useContext } from 'react';
 
 function Admin() {
 
-    let {items, setItems} = useContext(Context)
+    let {items} = useContext(Context)
 
     const admin = {
         login: '123',
