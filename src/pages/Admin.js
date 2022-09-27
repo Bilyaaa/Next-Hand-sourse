@@ -54,13 +54,13 @@ function Admin() {
 
     return (
         <div>
-            <div className="auth-inputs__container hidden">
+            <div className="auth-inputs__container">
                 <input className="login-input" type='text' placeholder="login" onClick={removeAlert} onKeyUp={getLogin}></input>
                 <input className="password-input" type='password' placeholder="password" onClick={removeAlert} onKeyUp={getPassword}></input>
                 <Button variant="success" onClick={submit}>Submit</Button>
                 <div className='wrong-alert hidden'>Wrong Login or password</div>
             </div>
-            <Container className='list__container'>
+            <Container className='list__container hidden'>
         <Table className='list-table'>
           {items.map((item) => (
             <tbody key={item.id}>
