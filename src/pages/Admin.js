@@ -77,6 +77,7 @@ function Admin() {
                 <td>{item.name}</td>
                 <td>{item.brand}</td>
                 <td>{item.price} грн</td>
+                <td><Button variant='outline-danger'>remove</Button></td>
                 <td>
                 </td>
               </tr>
