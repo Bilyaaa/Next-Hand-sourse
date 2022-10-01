@@ -1,19 +1,27 @@
 .mainContainer {
+    box-sizing: border-box;
+    padding: 0;
     margin-top: 6rem;
     display: flex;
 
     .filterContainer {
         width: 20%;
+         
+
         .filter {
             position: fixed;
             z-index: 90;
-            top: 15rem;
+            top: 10rem;
             margin-left: 6rem;
-
+            :first-child{
+                display: flex;
+                flex-direction: column;
+                }
             .accordion {
                 margin-bottom: 0.7rem;
                 border: none;
                 border-bottom: 4px solid bisque;
+                width: 100% !important;
 
                 .accordion-item {
                     border-radius: 0;
