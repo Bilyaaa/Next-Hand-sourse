@@ -1,161 +1,59 @@
-.container__card {
-    display: flex;
-    flex-direction: row;
-    justify-content: flex-end;
-    padding: 2rem 0 0 0;
-    background: url('../images/Dog.jpg');
-    border-radius: 0;
-    border: none;
-    max-height: 450px;
-    overflow: hidden;
-    
-    //     animation-duration: 2s;
-    //     animation-name: slidein;
-      
-      
-    //   @keyframes slidein {
-    //     from {
-    //       margin-right: 100%;
-    //       width: 300%;
-    //     }
-      
-    //     to {
-    //       margin-right: 0%;
-    //       width: 100%;
-    //     }
-    //   }
-      
+
+
+.card {
+    box-shadow: 0 0 10px black;
+    position: relative;
+    margin: 20px;
+
     .div-type {
+        position: absolute;
         text-transform: uppercase;
-        width: 100%;
-        align-self: flex-end;
         font-size: 2rem;
         font-style: italic;
-        text-align:center;
-        background-color: white;
-        width: 100%;
-        color: black;
-        
+        left: 30px;
+        background-color: none;
+        color: black;    
     }
 
-    div img {
-        background-color: white;
-        padding: 4rem 1rem 0 2rem;
-        border-radius: 0;
-        width: 400px;
-        height: 530px;
-    }     
+    .card-img-top {
+        border-top-left-radius: 0;
+    border-top-right-radius: 0;
+    }
 }
 
 .text-container {
     @import url('https://fonts.googleapis.com/css2?family=Murecho:wght@500&family=Noto+Serif+Display:ital@0;1&family=Yanone+Kaffeesatz:wght@500&display=swap');
     font-family: 'Murecho', sans-serif;
-    font-size: 3rem;
+    font-size: 2rem;
     background-color:#C4C4C4;
     display: flex;
     justify-content: space-between;
-    margin-bottom: 2rem;
-    padding-left: 1rem;
-    .div__brand {
+    align-items: center;
+    padding: 0 1rem;
+    .div-brand {
         text-transform: uppercase;
     }
 
-    .div__price{
+    .div-price{
         background-color: #424242;
         margin: 1rem .5rem 1rem 0;
         padding:0 2rem;
         background-color: rgb(146, 76, 76);
         color: black;
-        font-weight: 600;
+        font-weight: 500;
         box-shadow: 0 0 5px white;
     } 
+}
+
+@media (max-width: 500px) {
+    .card {
+        width: 90%;
+
+        .div-price {
+            padding: 0 1rem;
+        }
+    }
+
 }
      
 
-.container__cardR {
-    display: flex;
-    flex-direction: row;
-    padding: 2rem 0 0 0;
-    background: url('../images/Dog.jpg');
-    border-radius: 0;
-    border: none;
-    max-height: 450px;
-    overflow: hidden;
-
-//     animation-duration: 2s;
-//     animation-name: slidein1;
-  
-  
-//   @keyframes slidein1 {
-//     from {
-//       margin-left: 100%;
-//       width: 300%;
-//     }
-  
-//     to {
-//       margin-left: 0%;
-//       width: 100%;
-//     }
-//   }
-
-    .div-typeR {
-        text-transform: uppercase;
-        font-style: italic;
-        width: 100%;
-        align-self: flex-end;
-        font-size: 2rem;
-        text-align:center;
-        background-color: white;
-        width: 100%;
-        color: black;
-        
-    }
-
-    div img {
-        background-color: white;
-        padding: 4rem 2rem 0 1rem ;
-        border-radius: 0;                    
-        width: 400px;
-        height: 530px;
-        
-    } 
-}
-
-.text-containerR {
-    @import url('https://fonts.googleapis.com/css2?family=Murecho:wght@500&family=Noto+Serif+Display:ital@0;1&family=Yanone+Kaffeesatz:wght@500&display=swap');
-    font-family: 'Murecho', sans-serif;
-    font-weight: 700;
-    padding-right: 1rem;
-    margin-bottom: 2rem;
-    font-size: 3rem;
-    background-color:#C4C4C4;
-    display: flex;
-    justify-content: space-between;
-    
-
-    .div__brandR {
-        text-transform: uppercase;
-    }
-
-    .div__priceR{
-        background-color: #424242;
-        margin: 1rem 0 1rem .5rem;
-        padding:0 2rem;
-        background-color: rgb(146, 76, 76);
-        color: black;
-        font-weight: 600;
-        box-shadow: 0 0 5px white;
-    } 
-}
-
-
-.blackLine {
-    border: 5px solid black;
-    margin: 3rem 0;
-    width: 200%;
-}
-
-.blackLineR {
-    border: 5px solid black;
-    margin: 3rem 0;
-}

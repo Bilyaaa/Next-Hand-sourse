@@ -4,6 +4,7 @@ import '../styles/Delivery.scss'
 
 function Delivery () {
    return (
+    <>
        <Container className="main_container">
          
             <div style={{
@@ -71,6 +72,7 @@ function Delivery () {
           </div>
           
        </Container>
+       </>
    )
 }
 

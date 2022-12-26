@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { Container, Table, Button } from "react-bootstrap";
 import Swal from "sweetalert2";
+import Header from "../components/Header.tsx";
 
 
 function Basket() {
@@ -30,8 +31,12 @@ function Basket() {
   }
 
 
+
+
   if (basket.length) {
     return (
+      <>
+      <Header/>
       <Container style={{ display: "flex", marginTop: "10%" }}>
         <Table
           style={{
@@ -98,12 +103,16 @@ function Basket() {
           </Button>
         </div>
       </Container>
+      </>
     );
   } else {
     return (
+      <>
+      <Header/>
       <Container style={{ marginTop: "6rem", textAlign: "center" }}>
         <div style={{ fontSize: "5rem" }}>Ваша корзина пуста</div>
       </Container>
+      </>
     );
   }
 }

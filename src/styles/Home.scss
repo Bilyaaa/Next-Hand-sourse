@@ -14,9 +14,9 @@
             @import url('https://fonts.googleapis.com/css2?family=Murecho:wght@500&family=Noto+Serif+Display:ital@0;1&family=Yanone+Kaffeesatz:wght@500&display=swap');
                 font-family: 'Murecho', sans-serif;
                 font-size: 6rem;  
-                font-weight: 400;
-               
+                font-weight: 400;               
            }
+
            .home__container__img_container1-block1-text2 {
                display: flex;
                flex-direction: column;
@@ -37,7 +37,6 @@
                        color: rgb(146, 76, 76);
                        border: 1px solid bisque;
                        background-color: bisque;
-
                    }
                }
            }
@@ -101,23 +100,16 @@
            
         }
         .home__container3__div-block2 {
-                position: absolute;
-                background: bisque;
-                align-self: flex-end;
-                padding: 0 6rem 2rem;
-                
-                display: flex;
-                justify-content: center;
-                .btn {
-                    font-size:4rem;
-                    padding: 0 5rem;
-                  
-
-                }
-                
-                
-                
-                
-           } 
+            position: absolute;
+            background: bisque;
+            align-self: flex-end;
+            padding: 0 6rem 2rem;           
+            display: flex;
+            justify-content: center;
+            .btn {
+                font-size:4rem;
+                padding: 0 5rem;                
+            }      
+        } 
     }
 }

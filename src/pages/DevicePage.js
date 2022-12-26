@@ -1,16 +1,22 @@
 
 import { Card, Container, Carousel, Button } from "react-bootstrap";
-import { Link } from "react-router-dom";
-import { items, SHOP_ROUTE } from "../utils/consts";
+import { Link, useParams } from "react-router-dom";
 import Swal from 'sweetalert2'
 import ZoomImg from "../components/ZoomImg";
 import $ from 'jquery'
 import '../styles/DevicePage.scss'
+import Header from "../components/Header";
+import {Context} from "../App";
+import { useContext } from "react"
 
 function DevicePage() {
+
+  let itemId = useParams()
+  itemId = parseInt(itemId.itemId)
   let storedData = localStorage.getItem("basket");
   let basketItems = storedData ? JSON.parse(storedData) : [];
-  console.log(basketItems)
+  let {items} = useContext(Context);
+
 
   const Toast = Swal.mixin({
     toast: true,
@@ -24,24 +30,25 @@ function DevicePage() {
     }
   })
   
-  let myId = document.location.pathname.split("/").splice(2, 1);
-  myId = parseInt(myId);
+
   const myItem = items.filter((item) => {
-    if (item.id === myId) {
+    if (item.id === itemId) {
       return item;
     }
     else {
       return null
     }
   });
+
+
+
   return myItem.map((i) => (
-   
+    <>
+   <Header/>
     <Container className="mainItemContainer" key={i.id}>
       <ZoomImg i={i}></ZoomImg>
       <div className="arrow">
-        <Link to={SHOP_ROUTE}>
-          &#8249;
-        </Link>
+      <Link to="/shop">&#5130;</Link>
       </div>
       <div className="imgContainer">
       <div className="lupa-item"       
@@ -128,7 +135,7 @@ function DevicePage() {
        
       </div>
     </Container>
-    
+    </>
    
     
   ));

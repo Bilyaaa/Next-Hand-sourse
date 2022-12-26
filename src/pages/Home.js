@@ -5,21 +5,22 @@ import city from '../images/city.jpg';
 import Girl from '../images/Girl.jpeg'
 import Wclothing from '../images/Wclothing.jpg'
 import { Link } from 'react-router-dom';
-import { SHOP_ROUTE } from '../utils/consts'
-import $ from 'jquery'
 
 
-$('burger').hide()
+
+
 function HomeSec1 () {
  
   return (
-    <Container className='home__container'>
+   
+    
+    <Container className='home__container'>  
     <div className='home__container__img_container1'>
       <div className='home__container__img_container1-block1'>
         <div className='home__container__img_container1-block1-text1'>WELCOME</div>
           <div className='home__container__img_container1-block1-text2'>
             To the site of used brand clothing
-            <Link to={SHOP_ROUTE}>
+            <Link to="/shop">
             <Button variant='outline-light'>
               
               SHOP
@@ -38,7 +39,7 @@ function HomeSec2 () {
   return (
     <Container>      
       <div className='home__container2__block1'>
-        <Link to={SHOP_ROUTE}>WE MAKE STYLE</Link>
+        <Link to="/shop">WE MAKE STYLE</Link>
       </div>     
     </Container>
   )
@@ -55,7 +56,7 @@ function HomeSec3 (props) {
         <div className='home__container3__div-block1'>
           {props.label} <p><span>CLOTHING</span></p>
             <div className='home__container3__div-block2'>
-            <Link to={SHOP_ROUTE}>
+            <Link to="/shop">
             <Button variant='outline-light'>
               SHOP
             </Button></Link>

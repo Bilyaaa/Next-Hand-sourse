@@ -1,10 +1,12 @@
-import { Container, Row, Col } from "react-bootstrap";
-import { useContext } from "react";
-import { ItemLeft, ItemRight } from "../components/Item";
-import  Filters from '../components/Filters'
-import '../styles/Shop.scss'
+
+import { Container } from "react-bootstrap";
 import React from "react";
-import { Context } from '../App'
+import { useContext } from "react";
+import  Item from "../components/Item.tsx";
+import  Filters from '../components/Filters.tsx';
+import { Context } from '../App.tsx'
+import '../styles/Shop.scss'
+import $ from 'jquery'
 
 
 
@@ -14,69 +16,52 @@ function Shop() {
   const {items} = useContext(Context);
   const{filteredItems, setFilteredItems} = useContext(Context);
 
+  function showFilters() {
+    if ($('.close-button').hasClass('hidden')) {
+    $('.remove-hidden').css('display', 'none')
+    $('.filter').removeClass('hidden')
+    $('.close-button').removeClass('hidden')
+    }
+    else {
+      $('.filter').addClass('hidden')
+      $('.remove-hidden').css('display', 'block')
+      $('.close-button').addClass('hidden')
+    }
+    
+  }
+
+  $(document).ready(function widthCheck() {
+    if (window.outerWidth < 500) {
+      $('.filter').addClass('hidden')
+    }
+  })
+  
+
+  
+
 
   return (
     <Context.Provider value={{filteredItems, setFilteredItems}}>
-    <Container className="mainContainer">
+    <Container className="main-container">
       <div className="filterContainer">
+        <div className="remove-hidden" onClick={showFilters}>Filters</div>
+        <div className='close-button hidden' onClick={showFilters}>Close</div>
         <div className="filter">
           <Filters items={items}></Filters>
-         
         </div>
       </div>
-      <div style={{ width: '80%' }}>
-        <Row>
-          <Col xl={6} style={{ padding: "0" }}>
+      <div className="content-grid">
             {filteredItems.length
               ? filteredItems.map((item) => {
-                if (filteredItems.indexOf(item) % 2 === 0) {
-                  return (
-                    <>
-                      <ItemLeft key={item.id} item={item} />
-                      <div className="blackLine"></div>
-                    </>
-                  );
-                }
-                else return null;
+                return(
+                      <Item key={item.id} item={item} />
+                      )
               })
               : items.map((item) => {
-                if (items.indexOf(item) % 2 === 0) {
                   return (
-                    <>
-                      <ItemLeft key={item.id} item={item} />
-                      <div className="blackLine"></div>
-                    </>
-                  );
-                }
-                else return null;
+                      <Item key={item.id} item={item} />
+                      )
               })}
-          </Col>
-          <Col xl={6} style={{ padding: "0" }}>
-            {filteredItems.length
-              ? filteredItems.map((item) => {
-                if (filteredItems.indexOf(item) % 2 !== 0) {
-                  return (
-                    <>
-                      <ItemRight key={item.id} item={item} />
-                      <div className="blackLineR"></div>
-                    </>
-                  );
-                }
-                else return null;
-              })
-              : items.map((item) => {
-                if (items.indexOf(item) % 2 !== 0) {
-                  return (
-                    <>
-                      <ItemRight key={item.id} item={item} />
-                      <div className="blackLineR"></div>
-                    </>
-                  );
-                }
-                else return null;
-              })}
-          </Col>
-        </Row>
       </div>
     </Container>
     </Context.Provider>

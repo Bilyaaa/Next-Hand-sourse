@@ -1,8 +1,9 @@
 
 import { Button, Container, Table } from 'react-bootstrap';
 import '../styles/Admin.scss'
-import { Context } from '../App'
+import { Context } from '../App.tsx'
 import { useContext } from 'react';
+
 
 
 
@@ -53,6 +54,7 @@ function Admin() {
 
 
     return (
+      <>
         <div>
             <div className="auth-inputs__container">
                 <input className="login-input" type='text' placeholder="login" onClick={removeAlert} onKeyUp={getLogin}></input>
@@ -84,8 +86,9 @@ function Admin() {
             </tbody>
           ))}
         </Table>
-      </Container>        
+      </Container>
         </div>
+        </>
     );
 };
 
